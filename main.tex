@@ -507,16 +507,58 @@ El análisis FODA es una herramienta de diagnóstico estratégico que permite ev
 \subsection{Objetivos}
 
 \subsubsection{Objetivo General}
-[Definir el objetivo general del proyecto]
+Desarrollar un sistema predictivo para evaluar cómo los hábitos de vida estudiantil influyen en el 
+rendimiento académico, permitiendo la identificación temprana de estudiantes en riesgo y la 
+implementación de estrategias de intervención en la Universidad Católica del Norte.
 
 \subsubsection{Objetivos Específicos}
-[Listar y describir los objetivos específicos del proyecto]
+\begin{itemize}
+\item Establecer correlaciones estadísticas entre variables de estilo de vida (patrones de sueño, uso de redes sociales, hábitos alimenticios, actividad física) y el desempeño en exámenes finales
+\item Construir modelos predictivos que permitan anticipar el rendimiento académico individual basándose en indicadores comportamentales
+\item Identificar perfiles de riesgo académico mediante técnicas de clustering para segmentar estudiantes según sus patrones de comportamiento
+\item Cuantificar el impacto relativo de cada factor de estilo de vida en el éxito académico estudiantil
+\item Generar recomendaciones basadas en datos para optimizar los hábitos que más contribuyen al rendimiento académico
+\item Desarrollar un dashboard interactivo para el seguimiento continuo y la toma de decisiones académicas
+\end{itemize}
 
 \subsection{Alcance}
-[Definir el alcance del proyecto, especificando lo que se incluirá y lo que quedará fuera]
+\textbf{Dentro del alcance:}
+\begin{itemize}
+\item Análisis del dataset simulado con 1,000 registros estudiantiles y 15+ variables comportamentales
+\item Implementación de algoritmos de machine learning supervisado para predicción de calificaciones
+\item Aplicación de técnicas de clustering no supervisado para identificación de patrones estudiantiles
+\item Evaluación comparativa de múltiples modelos predictivos (regresión, árboles de decisión, ensemble methods)
+\item Análisis de importancia de características para identificar factores críticos
+\end{itemize}
+\textbf{Fuera del alcance:}
+\begin{itemize}
+\item Recopilación de información primaria de estudiantes reales de la UCN
+\item Implementación de sistemas de monitoreo en tiempo real en la infraestructura universitaria
+\item Desarrollo de aplicaciones móviles o plataformas de producción
+\item Análisis de variables externas como condiciones familiares
+\end{itemize}
 
 \subsection{Descripción de la Solución Propuesta}
-[Describir detalladamente la solución propuesta para resolver el problema identificado]
+La propuesta consiste en el desarrollo de un sistema analítico que utiliza técnicas de ciencia de datos para transformar 
+información sobre hábitos estudiantiles en insights accionables para mejorar el rendimiento académico institucional.
+
+\textbf{Arquitectura de la solución:}
+
+\textbf{1. Módulo de Preprocesamiento de Datos:} Limpieza, normalización y preparación del dataset, incluyendo tratamiento de valores atípicos y transformación de variables categóricas para optimizar el análisis.
+
+\textbf{2. Motor de Análisis Exploratorio:} Implementación de técnicas estadísticas descriptivas e inferenciales para descubrir patrones ocultos, correlaciones significativas y distribuciones relevantes en los datos comportamentales.
+
+\textbf{3. Sistema de Modelado Predictivo:} Desarrollo y comparación de múltiples algoritmos de machine learning, incluyendo regresión múltiple, random forest, gradient boosting y redes neuronales, con validación cruzada y optimización de hiperparámetros.
+
+\textbf{4. Componente de Segmentación Estudiantil:} Aplicación de algoritmos de clustering (K-means, DBSCAN, clustering jerárquico) para identificar grupos homogéneos de estudiantes con patrones comportamentales similares.
+
+\textbf{5. Interface de Visualización y Reporting:} Creación de un dashboard interactivo que permita explorar resultados, generar predicciones individuales y visualizar tendencias mediante gráficos dinámicos y reportes personalizables.
+
+\textbf{Valor agregado de la solución:}
+
+La implementación proporcionará a la Universidad herramientas de análisis que faciliten decisiones fundamentadas en datos reales. 
+La solución permitirá detectar oportunamente a estudiantes que puedan presentar dificultades académicas, optimizar el uso de recursos destinados al apoyo estudiantil y 
+ofrecer sugerencias basadas en comportamientos que han demostrado generar buenos resultados.
 
 %------------------------------------------------
 % PASO 6: PLANIFICACIÓN
