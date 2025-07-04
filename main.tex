@@ -730,7 +730,7 @@ A continuación se detallan las reglas de cálculo, transformaciones aplicadas y
 \textbf{Definición:} Representa el compromiso del estudiante con sus estudios, considerando tanto las horas dedicadas al estudio como su nivel de asistencia a clases.
 
 \textbf{Fórmula:}
-\(IDA = (Horas De Estudio * 0.6) + (Porcentaje De Asistencia * 0.4)\)
+\(IDA = ((Horas De Estudio / 8) * 50 ) + (Porcentaje De Asistencia * 0.5)\)
 
 \textbf{Rango:} 0 a 100
 
@@ -764,14 +764,19 @@ A continuación se detallan las reglas de cálculo, transformaciones aplicadas y
 \textbf{Definición: }Mide la cantidad de tiempo destinado a actividades no académicas ni saludables (tiempo de ocio pasivo).
 
 \textbf{Fórmula:}
-\(ITR = Horas en Redes Sociales + Horas de Netflix\)
+\(ITR = (Horas en Redes Sociales + Horas de Netflix)/Promedio de tiempo recreativo de la muestra (~4.5h por día)
+\)
 
-\textbf{Rango:} 0 a infinito
+\textbf{Rango:} 
+\begin{itemize}
+    \item ITR > 1 → tiempo excesivo en ocio
+    \item ITR ≈ 1 → promedio
+    \item ITR < 1 → menor distracción
+\end{itemize}
 
 \textbf{Tipo de métrica:} Cuantitativa continua
 
 \textbf{Justificación:} Altos valores pueden indicar distracción o mal uso del tiempo. Es útil para evaluar el equilibrio vida académica/ocio.
-
 
 
 \subsection{Condición de Riesgo Académico (Variable Binaria)}
@@ -794,19 +799,6 @@ A continuación se detallan las reglas de cálculo, transformaciones aplicadas y
 \textbf{Tipo de métrica:}  Cualitativa nominal
 
 \textbf{Justificación:} Útil para segmentar a los estudiantes y priorizar intervenciones.
-
-
-\subsection{Ratio de Aprovechamiento del Tiempo (RAT)}
-
-\textbf{Definición:} Proporción del tiempo dedicado a actividades productivas frente al total de horas autorreportadas.
-
-\textbf{Fórmula:}
-\(RAT = (Horas de Estudio + Horas de Sueño + Horas de Ejercicio) / (Horas Estudio + Sueño + Redes Sociales + Netflix + Ejercicio)
-\)
-
-\textbf{Tipo de métrica:} Cuantitativa continua, ratio
-
-\textbf{Justificación:} Permite evaluar si el estudiante está administrando eficientemente su tiempo.
 
 
 \subsection{Índice de Apoyo Socioeconómico (IASE)}
@@ -836,10 +828,10 @@ Las métricas serán implementadas mediante:
 \subsection{Ejemplos de Visualización en Power BI}
 
 \begin{itemize}
-    \item \textbf{Tarjetas (Cards):} Para IDA, IES, ITR y RAT individuales
+    \item \textbf{Tarjetas (Cards):} Para IDA, IES y ITR individuales
     \item \textbf{Segmentación por riesgo académico:} Mediante slicers y filtros para “Sí/No”
     \item \textbf{Gráficos de dispersión:} Comparando IES vs Puntaje en Examen
-    \item \textbf{Heatmaps y histogramas:} Para distribución de ITR o IDA en la población
+    \item \textbf{Heatmaps e histogramas:} Para distribución de ITR o IDA en la población
 \end{itemize}
 
 \subsection{Consideraciones Éticas y Limitaciones}
