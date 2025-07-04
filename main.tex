@@ -666,26 +666,38 @@ ofrecer sugerencias basadas en comportamientos que han demostrado generar buenos
 \section{Paso 9: Preparación de los Datos}
 
 \subsection{Carga de Datos}
-[Describir el proceso de carga de los datos]
+Los datos fueron cargados a Power BI desde un archivo en formato \texttt{.csv}, el cual tenía información estructurada tal como se detalló en la sección \textbf{Definición Data Set} La importación se realizó mediante la funcionalidad de "Obtener datos", seleccionando el tipo "Archivo CSV", y posteriormente se inspeccionaron los encabezados y tipos de datos detectados por Power BI. Durante esta etapa se verificó la correcta codificación del archivo (UTF-8) y se ajustaron los delimitadores en caso de ser necesario.
 
 \subsection{Transformación de Datos}
-[Detallar las transformaciones aplicadas a los datos para prepararlos para el análisis]
+Se realizaron validaciones sobre cada variable, para asegurar que sus valores estuvieran dentro de los rangos establecidos. 
+Se agregó un campo calculado llamado \texttt{total\_daily\_hours}, el cual suma las horas indicadas de sueño, estudio, Netflix, redes sociales, 4 horas estimadas para los estudiantes que indicaron tener un trabajo part time, y una estimación adicional de las horas de clases basada en el porcentaje de asistencia. En concreto, se estableció que el 80\%, 50\% y 20\% corresponden a 6, 3 y 1 horas de clase respectivamente.  
+A continuación, se muestra el desglose de las variables originales transformadas, junto con las variables resultantes.
 
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|X|X|X|}
+    \begin{tabularx}{\textwidth}{|l|X|l|}
         \hline
         \textbf{Variable Original} & \textbf{Transformación Aplicada} & \textbf{Variable Resultante} \\
         \hline
-        & & \\
+        \texttt{study\_hours\_per\_day}, \texttt{sleep\_hours}, \texttt{social\_media\_hours}, \texttt{netflix\_hours}, \texttt{part\_time\_job}, \texttt{attendance\_percentage} & Se creó una columna que suma horas de estudio, sueño, ocio, trabajo part-time (si aplica) y tiempo académico estimado en función de la asistencia. Esta transformación permitió detectar registros cuyo total diario excedía las 24 horas. & \texttt{total\_daily\_hours} \\
         \hline
-        & & \\
+        \texttt{total\_daily\_hours} & Se filtraron las filas donde el total de horas diarias superaba 24, eliminando registros con inconsistencias lógicas. & Filtrado (sin nueva variable) \\
         \hline
-        & & \\
+        \texttt{attendance\_percentage}, \texttt{sleep\_hours}, \texttt{study\_hours\_per\_day} & Se dividieron por 10 para normalizar los valores, ya que venían escalados incorrectamente. & Mismos nombres normalizados \\
+        \hline
+        \texttt{exam\_score} & Se dividió por 10 para ajustar la escala al rango correcto. & \texttt{exam\_score} (ajustado) \\
         \hline
     \end{tabularx}
-    \caption{Transformaciones Aplicadas a los Datos}
+    \caption{Transformaciones aplicadas durante la limpieza y validación de datos en Power BI}
 \end{table}
+
+Cabe destacar que la columna \texttt{total\_daily\_hours} fue generada únicamente con el fin de validar los datos y, por consiguiente, al finalizar el proceso de filtrado, fue eliminada para evitar redundancia en el modelo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagenes/total_daily_hours.png}
+    \caption{Transformación de datos en Power BI para el cálculo de \texttt{total\_daily\_hours}.}
+\end{figure}
 
 %------------------------------------------------
 % PASO 10: ESTABLECIMIENTO DE REGLAS DE CÁLCULO
