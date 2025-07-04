@@ -738,27 +738,6 @@ A continuación se detallan las reglas de cálculo, transformaciones aplicadas y
 
 \textbf{Justificación:} Combina dos variables directamente relacionadas con el desempeño académico. Se le otorga mayor peso al tiempo de estudio porque implica esfuerzo directo fuera del aula.
 
-
-\subsection{Índice de Estilo de Vida Saludable (IES)}
-
-\textbf{Definición: }Evalúa el grado de vida saludable del estudiante considerando alimentación, sueño y actividad física.
-
-\textbf{Fórmula:}
-
-\(IES = (Horas De Sueno (estandarizadas) * 0.4) + 
-(Frecuencia de Ejercicio (escala 1 a 10) * 0.3) + 
-(Calidad de Alimentacion (escala 1 a 10) * 0.3)
-\)
-
-\textit{Nota: Las horas de sueño se estandarizan con base en un ideal de 8 horas (valor óptimo). Se asignan pesos según literatura académica sobre salud estudiantil.}
-
-\textbf{Rango:} 0 a 10
-
-\textbf{Tipo de métrica: }Compuesta, cuantitativa continua
-
-\textbf{Justificación: }Estilo de vida saludable ha mostrado fuerte correlación con el rendimiento académico y la salud mental. Este índice permite hacer un seguimiento del bienestar general del estudiante.
-
-
 \subsection{Índice de Tiempo Recreativo (ITR)}
 
 \textbf{Definición: }Mide la cantidad de tiempo destinado a actividades no académicas ni saludables (tiempo de ocio pasivo).
@@ -778,46 +757,6 @@ A continuación se detallan las reglas de cálculo, transformaciones aplicadas y
 
 \textbf{Justificación:} Altos valores pueden indicar distracción o mal uso del tiempo. Es útil para evaluar el equilibrio vida académica/ocio.
 
-
-\subsection{Condición de Riesgo Académico (Variable Binaria)}
-
-\textbf{Definición:} Clasifica al estudiante como “en riesgo” si cumple dos o más condiciones de bajo desempeño o estilo de vida negativo.
-
-
-\textbf{Criterios de riesgo:}
-\begin{itemize}
-    \item Horas de Estudio menor a 1 hora diaria
-    \item Porcentaje de Asistencia menor a 60\%
-    \item IES menor a 5
-    \item ITR mayor a 6 horas
-    \item Puntaje en Examen menor a 50
-\end{itemize}
-
-\textbf{Fórmula:}
-\(CondicionRiesgo = SI(CondicionesCumplidas >= 2, Sí, No)\)
-
-\textbf{Tipo de métrica:}  Cualitativa nominal
-
-\textbf{Justificación:} Útil para segmentar a los estudiantes y priorizar intervenciones.
-
-
-\subsection{Índice de Apoyo Socioeconómico (IASE)}
-
-\textbf{Definición:} Índice sintético basado en si trabaja, calidad de internet y nivel educativo de los padres.
-
-\textbf{Fórmula:}
-\(IASE = (Nivel Educ. Padres * 0.4) + (Calidad Internet * 0.3) - (Trabajo Part-time * 0.3)
-\)
-
-\textbf{Trabajo part-time} = 1 si trabaja, 0 si no
-
-\textbf{Nivel educativo y calidad de internet estandarizados} a escala de 1 a 10
-
-\textbf{Tipo de métrica:} Cuantitativa continua
-
-\textbf{Justificación:} Ayuda a medir la influencia del entorno socioeconómico sobre el desempeño.
-
-
 \subsection{Implementación de Cálculos}
 Las métricas serán implementadas mediante:  
 \begin{itemize}
@@ -828,9 +767,7 @@ Las métricas serán implementadas mediante:
 \subsection{Ejemplos de Visualización en Power BI}
 
 \begin{itemize}
-    \item \textbf{Tarjetas (Cards):} Para IDA, IES y ITR individuales
-    \item \textbf{Segmentación por riesgo académico:} Mediante slicers y filtros para “Sí/No”
-    \item \textbf{Gráficos de dispersión:} Comparando IES vs Puntaje en Examen
+    \item \textbf{Tarjetas (Cards):} Para IDA e ITR con el promedio de cada una
     \item \textbf{Heatmaps e histogramas:} Para distribución de ITR o IDA en la población
 \end{itemize}
 
