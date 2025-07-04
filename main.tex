@@ -139,13 +139,11 @@ La Universidad Católica del Norte (UCN) fundada en el año 1956, es una institu
 \section{Paso 2: Introducción a la Problemática}
 
 \subsection{Descripción del Problema}
-[Describir detalladamente el problema o la oportunidad de mejora identificada en la organización]
+Se identificó en la Universidad Católica del Norte que estudiantes de distintas facultades tenían bajo rendimiento académico lo que provocó que muchos abandonaran sus respectivas carreras o que se atrasaran varios años. Por lo cual se decicidió investigar cuáles podrían ser las razones por las que esto ocurre con tanta frecuencia, para poder ponerle un freno a esta situación y ayudar a los estudiantes con herramientas para mejorar su desempeño. Por ello se contempló la posibilidad de trabajar con un dataset sintético para evaluar posibles causas de este problema y así poder presentar soluciones que resuelvan o mitiguen los efectos provocados por el bajo rendimiento de los estudiantes.
 
 \subsection{Justificación}
-[Explicar por qué es importante resolver este problema o implementar esta mejora]
-
-\subsection{Impacto Esperado}
-[Describir el impacto esperado de la solución propuesta en la organización]
+Es relevante poner un enfásis en la resolución de la problemática mencionada, para lograr disminuir el porcentaje de reprobación en los estudiantes, para que así puedan culminar sus estudios en la duración establecidad de su carrera. En promedio en Chile, los estudiantes se gradúan en 1,25 años más de la extensión real del pregrado. Además, se estimó que en la Universidad Católica del Norte los estudiantes se tardan entre 2 y 2,5 años en concluir sus estudios, al estar sobre el promedio del país, supone un problema real que afecta a los estudiantes de esta casa de estudios.
+Gracias a la investigación, se espera poder identificar correctamente las causas fundamentales que generan esta problemática, para poder disminuir significativamente los años adicionales que requieren los alumnos para finalizar sus estudios, analizando estrategias de apoyo para eliminar o mitigar el efecto que producen las razones por las cuales su rendimiento se ve afectado, logrando así herramientas beneficiosas para fomentar el aprendizaje.
 
 \section{Identificación de Stakeholders}
 [Identificar y describir los principales grupos de interés (stakeholders) relacionados con la organización y el proyecto]
@@ -172,27 +170,59 @@ La Universidad Católica del Norte (UCN) fundada en el año 1956, es una institu
 \section{Paso 3: Identificación y Detalle del Proceso}
 
 \subsection{Descripción General del Proceso}
-[Describir el proceso sobre el cual se va a trabajar]
+El proceso a trabajar consiste en el diseño, desarrollo y aplicación de un sistema de análisis de información basado en datos estudiantiles, que permita identificar patrones y factores que influyen en el bajo rendimiento académico de los estudiantes. El sistema utilizará un dataset sintético que representa los hábitos de estudio, salud mental, actividades extracurriculares y otros factores, para luego correlacionarlos con el rendimiento académico.
+
+Este proceso se enmarca dentro de un proyecto de inteligencia de negocios académica, en el que se busca transformar datos en conocimiento útil para la toma de decisiones en contextos educativos.
 
 \subsection{Diagrama del Proceso}
-[Incluir un diagrama que represente visualmente el proceso]
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{diagrama de flujo.drawio.png}
+    \caption{Diagrama de flujo del proceso}
+    \label{fig:enter-label}
+\end{figure}
 
 \subsection{Detalle de Cada Paso del Proceso}
-[Explicar cada uno de los pasos del proceso identificado]
 
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{3cm}|p{5cm}|p{3cm}|p{5cm}|}
         \hline
         \textbf{Paso} & \textbf{Descripción} & \textbf{Responsable} & \textbf{Recursos necesarios} \\
         \hline
-        & & & \\
+        Recolección de Datos &
+        Obtención y comprensión del dataset sintético con variables relacionadas a hábitos estudiantiles y rendimiento. &
+        Vicente Espinoza &
+        Acceso a Kaggle, herramientas para visualizar CSV . \\
         \hline
-        & & & \\
+        Limpieza y Preprocesamiento &
+        Depuración de datos, tratamiento de valores faltantes y codificación de variables. &
+        Daniela Castro &
+        Python , Google Colab o Jupyter Notebook, documentación del dataset. \\
         \hline
-        & & & \\
+        Análisis Exploratorio de Datos (EDA) &
+        Identificación de patrones, correlaciones y visualización de relaciones entre variables. &
+        Gabriel Vergara &
+        Python , entorno de desarrollo , herramientas estadísticas básicas. \\
         \hline
-    \end{tabularx}
+        Modelado Predictivo &
+        Aplicación de algoritmos de Machine Learning para predecir rendimiento académico. &
+        Diego Martínez &
+        Scikit-learn, XGBoost u otros modelos de ML, recursos computacionales , librerías de evaluación . \\
+        \hline
+        Interpretación de Resultados &
+        Evaluación del modelo, análisis de métricas y extracción de insights clave. &
+        Sebastián Vega &
+        Documentación de métricas , visualizaciones de importancia de variables, herramientas de reporte . \\
+        \hline
+        Recomendaciones y Desarrollo de Soluciones &
+        Elaboración de propuestas prácticas basadas en los resultados obtenidos para apoyar a estudiantes. &
+        Daniela Castro &
+        Resultados del análisis, documento de propuestas. \\
+        \hline
+    \end{tabular}
     \caption{Detalle de los Pasos del Proceso}
 \end{table}
 
@@ -538,22 +568,33 @@ ofrecer sugerencias basadas en comportamientos que han demostrado generar buenos
 \section{Paso 6: Planificación}
 
 \subsection{Ciclo de Desarrollo}
-[Describir el ciclo de desarrollo que se utilizará para implementar la solución]
+Se empleará el ciclo de desarrollo incremental, ideal para proyectos de análisis de datos donde se puede trabajar en etapas parciales que se mejoran progresivamente. Este ciclo permite entregar avances funcionales desde etapas tempranas, realizar retroalimentación continua y ajustar soluciones conforme se avanza en el análisis.
+\begin{enumerate}
+    \item Recolección y comprensión inicial de datos
+    \item Primer análisis y visualización
+    \item Construcción de modelos iniciales
+    \item Validación y ajuste de modelos
+    \item Extracción de resultados y generación de propuestas
+    \item Documentación y presentación
+\end{enumerate}
 
 \subsection{División del Trabajo y Roles del Equipo}
-[Especificar cómo se dividirá el trabajo y qué rol desempeñará cada miembro del equipo]
 
 \begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{|X|X|X|}
         \hline
         \textbf{Miembro del Equipo} & \textbf{Rol} & \textbf{Responsabilidades} \\
-        \hline
-        & & \\
-        \hline
-        & & \\
-        \hline
-        & & \\
+        \hline Daniela Castro
+        & Coordinadora del Proyecto & Coordina reuniones, lidera la integración de entregables y revisa avances finales. \\
+        \hline Vicente Espinoza
+        & Encargado de Datos & Descarga, organiza y documenta el dataset. Prepara los datos para su análisis.\\
+        \hline Gabriel Vergara
+        & Analista Exploratorio & Realiza el análisis exploratorio y genera visualizaciones para detectar patrones.\\
+        \hline Diego Martínez
+        & Modelador de Datos & Desarrolla modelos predictivos y evalúa su rendimiento con métricas adecuadas.\\
+        \hline Sebastián Vega
+        & Evaluador y Documentador & Interpreta resultados del modelo, redacta conclusiones y elabora las recomendaciones.\\
         \hline
     \end{tabularx}
     \caption{Roles y Responsabilidades del Equipo}
@@ -567,16 +608,29 @@ ofrecer sugerencias basadas en comportamientos que han demostrado generar buenos
     \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
         \hline
         \textbf{Tarea} & \textbf{Responsable} & \textbf{Fecha Inicio} & \textbf{Fecha Fin} & \textbf{Dependencias} \\
-        \hline
-        & & & & \\
-        \hline
-        & & & & \\
-        \hline
-        & & & & \\
+        \hline  Primer informe y presentación de avance
+        & Todo el equipo & 18 Mayo & 23 Mayo& \\
+        \hline Recolección y organización de datos 
+        & Vicente Espinoza & 23 Mayo & 27 Mayo& Dataset\\
+        \hline Limpieza y preprocesamiento de datos
+        & Daniela Castro & 	27 Mayo & 31 Mayo & Recolección de datos \\
+        \hline Análisis exploratorio y visualizaciones
+        & Gabriel Vergara & 1 Junio & 7 Junio & Preprocesamiento de datos \\
+        \hline Desarrollo de modelo predictivo inicial
+        & Diego Martínez & 8 Junio & 12 Junio&Análisis exploratorio\\
+        \hline Evaluación del modelo y ajuste
+        & Diego Martínez & 10 Junio & 14 Junio &  Modelo inicial\\
+        \hline Interpretación y generación de propuestas
+        & Sebastián Vega & 14 Junio & 20 Junio & Modelo validado\\
+        \hline Redacción de informe final
+        & Todo el equipo & 20 Junio & 28 Junio& Todos los pasos anteriores\\
+        \hline Preparación presentación final
+        & Todo el equipo & 28 Junio & 30 Junio& Informe y resultados finales \\
         \hline
     \end{tabularx}
     \caption{Cronograma de Tareas}
 \end{table}
+
 
 %------------------------------------------------
 % PASO 7: IDENTIFICACIÓN DE KPI
@@ -612,27 +666,18 @@ Los KPI seleccionados permiten identificar de manera objetiva y cuantificable el
 %------------------------------------------------
 \section{Paso 8: Definición y Descripción de los Datos}
 
-\subsection{Establecimiento y Búsqueda del Data Set}
-[Describir el proceso de establecimiento y búsqueda del conjunto de datos]
-
 \subsection{Descripción Detallada del Data Set}
-La definición detallada del data set se 
+El dataset seleccionado revela con datos sintéticos los hábitos de 1.000 estudiantes, considerando 14 variables entre las cuales se encuentra; edad, género, horas de estudio por día, horas dedicadas a redes sociales, horas de netflix, porcentaje de asistencia, horas de sueño, calidad de alimentación, frecuencia de ejercicio, nivel de educación de los padres, calidad de internet, evaluación de salud mental (escala del 1 al 10), participación en actividades extracurriculares, trabajo tiempo parcial (si o no), para evaluar la influencia de dichos indicadores en el puntaje de sus exámenes
+Se encuentra en formato .csv, donde las columnas corresponden a las variables, siendo la última de éstas, las calificaciones y las filas las respuestas de los estudiantes. De las categorías mencionadas anteriormente se tienen 9 variables cuantitativas (de las cuales 3 son discretas y 6 son continuas) y 5 variable cualitativas (3 nominales y 2 ordinales)
 
-\begin{table}[H]
-    \centering
-    \begin{tabularx}{\textwidth}{|X|X|X|X|}
-        \hline
-        \textbf{Variable} & \textbf{Tipo de Dato} & \textbf{Descripción} & \textbf{Ejemplo} \\
-        \hline
-        & & & \\
-        \hline
-        & & & \\
-        \hline
-        & & & \\
-        \hline
-    \end{tabularx}
-    \caption{Descripción de Variables del Data Set}
-\end{table}
+\section{Justificación del Data Set}
+La elección del análisis del actual dataset representa una herramienta para analizar cómo los hábitos de los estudiantes pueden afectar el rendimiento académico, sirviendo para comparar cuáles variables podrían incidir en los resultados de los exámenes finales de los estudiantes. Es de suma importancia hacer un énfasis en esta investigación para determinar como aumentar el rendimiento de los estudiantes y posteriormente aplicar las herramientas encontradas para aplicarlas a un grupo de personas real, contribuyendo así a una mejora de los hábitos de ellos.
+
+\section{Calidad y Limitaciones de los Datos}
+En el dataset no se presentan datos faltantes. En cuanto a inconsistencias, aparentemente no se encontró ninguna, pero si podría generar dudas para el análisis, el hecho de que existan al menos 12 estudiantes que estudian 0 horas diarias, y un estudiante que trabaja part time, que estudia 8.3 horas, duerme 6.5, obtiene 100 de puntaje en el examen y posee tiempo para redes sociales y netflix, ya que los tiempos no coinciden por completo, lo cual podría indicar falsedad en la respuesta del estudiante.
+Una limitación que podría presentar el set de datos corresponde a la cantidad de información presentada, debido a que sólo se tienen 1.000 estudiantes, se podría haber tomado un valor mayor o haber indicado que los estudiantes corresponden a una facultad en específico, para así tener un mayor panorama de otras variables que podrían influenciar negativamente en la precisión del estudio. Otro aspecto a considerar sería el incluir las razones de las inasistencias, ya que se podría llegar a una conclusión errónea, como por ejemplo decir que los estudiantes por irresponsabilidad (por el hecho de no asistir a clases) no obtuvieron un buen rendimiento en el examen, cuando pueden haberse ausentado por enfermedad. Y,
+finalmente agregar el tipo de actividad extracurricular que realizan los estudiantes, ya que esto facilitaría establecer una conexión de actividades extracurriculares que ayudan a los estudiantes a mejorar su rendimiento.
+
 
 %------------------------------------------------
 % PASO 9: PREPARACIÓN DE LOS DATOS
